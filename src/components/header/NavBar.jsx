@@ -1,8 +1,7 @@
-import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import profieImg from "../../assets/Navbar/glassesshop-man-9182458_1920.jpg"
+import profieImg from "../../assets/Navbar/glassesshop-man-9182458_1920.jpg";
 
 const NavBar = () => {
   const links = [
@@ -13,40 +12,59 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex items-center justify-between border-b px-6 py-5">
-      <div className="left flex items-center gap-12">
-        <div>
-          <img />
-          <p className="text-2xl text-black font-bold">SmartChef</p>
+    <header className="border-b px-4 py-4 sm:px-6 sm:py-5">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-y-4">
+        <p className="order-1 shrink-0 text-xl font-bold text-black sm:text-2xl">
+          SmartChef
+        </p>
+
+        <div className="order-2 ml-auto flex items-center gap-2 sm:gap-4">
+          <label className="flex h-10 w-24 items-center gap-1 rounded-full bg-gray-100 px-2.5 sm:w-48 sm:gap-2 sm:px-3 lg:w-64">
+            <CiSearch aria-hidden="true" className="shrink-0 text-gray-500" size={20} />
+            <span className="sr-only">Search recipes</span>
+            <input
+              aria-label="Search recipes"
+              className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-gray-500"
+              placeholder="Search"
+              type="search"
+            />
+          </label>
+          <button
+            aria-label="Saved recipes"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
+            type="button"
+          >
+            <FaBookmark aria-hidden="true" size={14} />
+          </button>
+          <img
+            alt="Profile"
+            className="h-10 w-10 shrink-0 rounded-full object-cover"
+            src={profieImg}
+          />
         </div>
-        <div className="flex gap-12">
+
+        <nav
+          aria-label="Main navigation"
+          className="order-3 flex w-full items-center gap-6 overflow-x-auto whitespace-nowrap pb-1 lg:order-1 lg:ml-10 lg:w-auto lg:flex-1 lg:gap-8"
+        >
           {links.map((link) => (
             <NavLink
-              to={link.path}
-              end={link.path === "/"}
               className={({ isActive }) =>
-                `font-bold ${isActive && link.path !== "#" ? "text-black" : "text-gray-600"
+                `shrink-0 font-bold ${
+                  isActive && link.path !== "#" ? "text-black" : "text-gray-600"
                 }`
               }
+              end={link.path === "/"}
               key={link.title}
+              to={link.path}
             >
               {link.title}
             </NavLink>
           ))}
-        </div>
+        </nav>
       </div>
-      <div className="right flex items-center gap-6">
-        <div className="w-62 py-2 px-2 rounded-lg bg-gray-100  flex justify-between items-center">
-          <input placeholder="Enter to search" className="outline-none" />
-          <CiSearch size={20} />
-        </div>
-        <div className="bg-gray-100 rounded-full p-4">
-          <FaBookmark size={14} />
-        </div>
-        <img src={profieImg} className="w-10 h-10 rounded-full" />
-      </div>
-    </div>
-  )
-}
+    </header>
+  );
+};
 
 export default NavBar;
