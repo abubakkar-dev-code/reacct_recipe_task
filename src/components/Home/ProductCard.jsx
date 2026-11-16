@@ -7,9 +7,8 @@ const ProductCard = ({ recipe }) => {
   const description =
     recipe.description ||
     (ingredients.length
-      ? `Made with ${ingredients.slice(0, 3).join(", ")}${
-          ingredients.length > 3 ? " and more." : "."
-        }`
+      ? `Made with ${ingredients.slice(0, 3).join(", ")}${ingredients.length > 3 ? " and more." : "."
+      }`
       : "A delicious recipe to try at home.");
 
   return (
@@ -35,11 +34,10 @@ const ProductCard = ({ recipe }) => {
         <div className="mt-3 flex min-h-6 flex-wrap items-center gap-2">
           {tags.map((tag, index) => (
             <span
-              className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
-                index === 0
+              className={`rounded-full px-2.5 py-1 text-xs font-semibold ${index === 0
                   ? "bg-emerald-100 text-emerald-700"
                   : "bg-sky-100 text-sky-700"
-              }`}
+                }`}
               key={`${tag}-${index}`}
             >
               {tag}
@@ -52,7 +50,7 @@ const ProductCard = ({ recipe }) => {
           )}
         </div>
 
-        <div className="mt-4 flex gap-2">
+        <div className="mt-4 flex flex-col md:flex-row gap-2">
           <span className="inline-flex flex-1 items-center justify-center rounded-full bg-yellow-400 px-3 py-2 text-sm font-bold text-gray-900">
             View Recipe
           </span>
