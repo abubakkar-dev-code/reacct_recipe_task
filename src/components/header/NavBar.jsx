@@ -13,10 +13,10 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="px-4 py-1 sm:px-6 sm:py-5 shadow-lg">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-y-2">
+    <div className="px-10 py-3  shadow-lg">
+      <div className=" flex flex-wrap items-center gap-x-2">
         <Logo/>
-        <p className="order-1 shrink-0 text-xl font-bold text-black sm:text-2xl">
+        <p className="order-1 text-xl font-bold text-black sm:text-2xl">
           SmartChef
         </p>
 

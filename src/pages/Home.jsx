@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <main className="min-h-screen bg-[#fafafa] px-6 py-8">
-            <div className="mx-auto max-w-6xl">
+            <div className="px-18">
                 <h1 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl">
                     Recipe Results
                 </h1>
