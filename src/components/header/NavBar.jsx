@@ -2,6 +2,7 @@ import { CiSearch } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import profieImg from "../../assets/Navbar/glassesshop-man-9182458_1920.jpg";
+import Logo from "../../assets/Navbar/logo/Logo";
 
 const NavBar = () => {
   const links = [
@@ -12,28 +13,9 @@ const NavBar = () => {
   ];
 
   return (
-    <header className="border-b px-4 py-4 sm:px-6 sm:py-5">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-y-4">
-        <svg width="50" height="50" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-          <g transform="rotate(45 64 64)">
-            <rect
-              x="34"
-              y="34"
-              width="60"
-              height="60"
-              rx="12"
-              fill="#F4C20D"
-            />
-
-            <path
-              d="M52 64
-         C58 52, 70 48, 82 52
-         C74 56, 66 64, 60 76
-         C56 72, 53 68, 52 64Z"
-              fill="#FFFFFF"
-            />
-          </g>
-        </svg>
+    <div className="px-4 py-1 sm:px-6 sm:py-5 shadow-lg">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-y-2">
+        <Logo/>
         <p className="order-1 shrink-0 text-xl font-bold text-black sm:text-2xl">
           SmartChef
         </p>
@@ -82,7 +64,7 @@ const NavBar = () => {
           ))}
         </nav>
       </div>
-    </header>
+    </div>
   );
 };
 
